@@ -15,10 +15,6 @@ int Voice = 8;
 int BGMTrack = 0;
 int VoiceTrack = 0;
 int LPNumber = 0;
-//int LPArray[4] = {4, 0, 0, 0};
-//int LastLPCheck = 0;
-//int CurrLPCheck = 0;
-
   
 void setup()
 {
@@ -47,8 +43,7 @@ void loop()
      Sounds.playFolder(2,BGMTrack); 
      Serial.print(BGMTrack);
      Serial.print(LPNumber);
-     //Serial.print(LPNumber + "  ");
-     
+
       if(BGMTrack == 4){
         BGMTrack = 0;
         }
@@ -67,21 +62,13 @@ void loop()
 
   if(digitalRead(Voice)){
      delay(200);
-
-
-      
-      //CurrLPCheck = LPNumber;
-
-      //if(LastLPCheck == CurrLPCheck){
-        //animation();
-        //Sounds.playFolder(UnknownFolder,LPSounds);
-      //}
-
+     
+      Serial.print(LPNumber);
 
         switch(LPNumber){
 
-          case 0:
-            if(VoiceTrack == 3){
+          case 0:                                 //999 - 1 Life Points
+            if(VoiceTrack == 3){   
             VoiceTrack = 0;
             }
 
@@ -89,7 +76,7 @@ void loop()
             Sounds.playFolder(3, VoiceTrack);
             break;
 
-          case 1:
+          case 1:                                 //1999 - 1000 Life Points
             if(VoiceTrack == 3){
             VoiceTrack = 0;
             }
@@ -98,7 +85,7 @@ void loop()
             Sounds.playFolder(4, VoiceTrack);
             break;
           
-          case 2:
+          case 2:                                 //2999 - 2000 Life Points
             if(VoiceTrack == 3){
             VoiceTrack = 0;
             }
@@ -107,7 +94,7 @@ void loop()
             Sounds.playFolder(5, VoiceTrack);
             break;
 
-          case 3:
+          case 3:                                 //3999 - 3000 Life Points
             if(VoiceTrack == 3){
             VoiceTrack = 0;
             }
@@ -116,7 +103,7 @@ void loop()
             Sounds.playFolder(6, VoiceTrack);
             break;
 
-          case 4:
+          case 4:                                 //4999 - 4000 Life Points
             if(VoiceTrack == 5){
             VoiceTrack = 0;
             }
@@ -125,7 +112,7 @@ void loop()
             Sounds.playFolder(7, VoiceTrack);
             break;
 
-          case 5:
+          case 5:                                 //5999 - 5000 Life Points
             if(VoiceTrack == 10){
             VoiceTrack = 0;
             }
@@ -134,7 +121,7 @@ void loop()
             Sounds.playFolder(8, VoiceTrack);
             break;
 
-          case 6:
+          case 6:                                 //6999 - 6000 Life Points
             if(VoiceTrack == 10){
             VoiceTrack = 0;
             }
@@ -143,7 +130,7 @@ void loop()
             Sounds.playFolder(9, VoiceTrack);
             break;
 
-          default:
+          default:                                 //9999 - 7000 Life Points
             if(VoiceTrack == 10){
             VoiceTrack = 0;
             }
@@ -155,5 +142,3 @@ void loop()
      }
 }
   
-
-
